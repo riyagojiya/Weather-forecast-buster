@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PS 79 AI-based forecast bust detection prototype.">
+  <title>Forecast Bust Detection | PS 79</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html">PS 79<span>Forecast Intelligence</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button>
+  <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+    <a href="index.html">Overview</a>
+    <a href="forecast.html">Forecast</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero page-width">
+    <p class="eyebrow">SMART INDIA HACKATHON 2026 · PS 79</p>
+    <h1>Detecting when a weather forecast may break down.</h1>
+    <p class="hero-copy">An AI-based decision-support prototype for identifying regions and lead times where medium-range numerical weather forecasts may have higher uncertainty or larger error.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="forecast.html">Open forecast view</a>
+      <a class="button button-secondary" href="methodology.html">Explore methodology</a>
+    </div>
+  </section>
+
+  <section class="section page-width two-column">
+    <div>
+      <p class="eyebrow">INDIA VIEW</p>
+      <h2>Forecast confidence across the country.</h2>
+      <p>Use the forecast workspace to inspect reference data and baseline-model confidence.</p>
+    </div>
+    <figure class="map-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/India-map-en.svg" alt="Administrative map of India showing states and union territories">
+      <figcaption>Administrative map of India. Map source: Wikimedia Commons, India-map-en.svg.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section section-dark">
+    <div class="page-width">
+      <p class="eyebrow">THE PROBLEM</p>
+      <h2>Rapidly evolving weather systems can challenge medium-range forecasts.</h2>
+      <div class="text-grid">
+        <p>Monsoon depressions, heavy rainfall, western disturbances, cyclones, heat waves, and active or break monsoon phases can produce forecast behaviour that differs substantially from historical patterns.</p>
+        <p>The system is designed to compare forecast patterns with historical forecast-error behaviour and surface where confidence should be treated with greater caution.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-width">
+    <p class="eyebrow">EXPECTED OUTPUT</p>
+    <h2>One workspace for confidence, error risk, and explanation.</h2>
+    <div class="feature-grid">
+      <article class="feature"><span>01</span><h3>Confidence map</h3><p>Day 1 to Day 10 forecast confidence representation.</p></article>
+      <article class="feature"><span>02</span><h3>Bust probability</h3><p>Model output indicating where forecast behaviour may become unreliable.</p></article>
+      <article class="feature"><span>03</span><h3>Error-prone areas</h3><p>Identification of regions associated with elevated forecast error.</p></article>
+      <article class="feature"><span>04</span><h3>Explainability</h3><p>Human-readable factors associated with the model output.</p></article>
+    </div>
+  </section>
+
+  <section class="section page-width">
+    <div class="section-heading">
+      <div><p class="eyebrow">CURRENT STATE</p><h2>Prototype interface</h2></div>
+      <span class="status-badge">Baseline model live</span>
+    </div>
+    <div class="preview-card">
+      <div class="preview-map"><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/India-map-en.svg" alt=""></div>
+      <div class="preview-copy">
+        <p class="eyebrow">MODEL OUTPUT</p>
+        <h3>See held-out bust probabilities on the Analysis page.</h3>
+        <p>Values come from a persistence baseline on real observations, not from NWP. It is a development stand-in until HRES or NCMRWF forecasts are paired.</p>
+        <a href="analysis.html" class="text-link">Open the held-out replay</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div><strong>PS 79 Forecast Intelligence</strong><span>AI-based forecast bust detection prototype</span></div>
+  <nav aria-label="Footer navigation"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav>
+</footer>
+<script src="app.js?v=4"></script>
+</body>
+</html>

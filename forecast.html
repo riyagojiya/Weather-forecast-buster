@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forecast Workspace | PS 79</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">PS 79<span>Forecast Intelligence</span></a><button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="index.html">Overview</a><a class="active" aria-current="page" href="forecast.html">Forecast</a><a href="analysis.html">Analysis</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav></header>
+<main id="main">
+<section class="page-hero page-width"><p class="eyebrow">FORECAST WORKSPACE</p><h1>Regional forecast reliability viewer.</h1><p>Explore the development sample below. Switch the layer to see held-out forecast confidence and bust probability from the development baseline (persistence forecast of temperature). It is not NWP output.</p></section>
+
+<section class="page-width section">
+<div class="forecast-toolbar">
+  <div class="control-group"><label for="dataDate">Reference date</label><select id="dataDate"></select></div>
+  <div class="control-group"><label for="dataVariable">Field</label><select id="dataVariable"><option value="temperature_celsius">Temperature (°C)</option><option value="precip_mm">Precipitation (mm)</option><option value="humidity">Humidity (%)</option><option value="wind_kph">Wind speed (km/h)</option><option value="pressure_mb">Pressure (mb)</option><option value="cloud">Cloud cover (%)</option><option value="visibility_km">Visibility (km)</option><option value="uv_index">UV index</option></select></div>
+  <div class="control-group"><label for="regionFilter">Region</label><select id="regionFilter"><option value="all">All India</option></select></div>
+  <div class="control-group"><label for="leadDay">Lead day</label><select id="leadDay"><option value="1">Day 1</option><option value="2">Day 2</option><option value="3">Day 3</option><option value="4">Day 4</option><option value="5" selected>Day 5</option><option value="6">Day 6</option><option value="7">Day 7</option><option value="8">Day 8</option><option value="9">Day 9</option><option value="10">Day 10</option></select></div>
+  <div class="control-group"><label for="mapMode">Layer</label><select id="mapMode"><option value="reference">Reference observation</option><option value="confidence">Forecast confidence (baseline model)</option><option value="bust">Bust probability (baseline model)</option></select></div>
+</div>
+<div class="forecast-layout">
+  <div class="map-card map-shell">
+    <div class="map-header"><div><p class="eyebrow">INDIA FIELD</p><strong id="mapTitle">Reference temperature</strong></div><span class="status-badge" id="dataStatus" role="status" aria-live="polite">Loading dataset</span></div>
+    <div id="weatherMap" aria-label="Interactive India weather map"></div>
+    <div class="map-footer"><div class="legend" id="mapLegend"></div><span id="pointCount">Loading locations...</span></div>
+  </div>
+  <div class="stack">
+    <article class="data-card"><p class="eyebrow">SELECTED FIELD</p><h2 id="fieldValue">Loading...</h2><p id="fieldDescription">Reading the development sample (build v3)…</p></article>
+    <article class="data-card"><p class="eyebrow">DEVELOPMENT SAMPLE</p><div class="metric-list"><div><span>Records</span><strong>118,298</strong></div><div><span>Locations</span><strong>558</strong></div><div><span>Regions</span><strong>33</strong></div><div><span>Coverage</span><strong>Aug 2023 - Apr 2024</strong></div></div></article>
+    <article class="data-card"><p class="eyebrow">PS 79 STATUS</p><div class="empty-state"><strong id="modelStatus">Development baseline model</strong><span id="modelDescription">Forecasts here are a persistence baseline built from the observations, so the full pipeline (forecast, error, bust label, probability, verification) runs on real data. HRES or NCMRWF forecasts replace the baseline when paired.</span></div></article>
+  </div>
+</div>
+</section>
+
+<section class="page-width section section-tight"><div class="section-heading"><div><p class="eyebrow">DAILY TREND</p><h2>Reference field over time</h2></div></div><div class="data-card"><div id="trendChart"></div><p class="data-note" id="trendNote"></p></div></section>
+<section class="page-width section section-tight"><div class="section-heading"><div><p class="eyebrow">EXTREMES</p><h2>Highest and lowest locations</h2></div></div><div class="extremes" id="extremes"></div></section>
+<section class="page-width section section-tight">
+<div class="section-heading"><div><p class="eyebrow">LEAD TIMES</p><h2>Day 1 to Day 10</h2></div><span class="status-badge">Day 1–10 = 24–240 h</span></div>
+<div class="table-wrap"><table><thead><tr><th>Lead time</th><th>Baseline forecast</th><th>Mean abs. error, test</th><th>Model ROC-AUC, test</th></tr></thead><tbody id="leadTable">
+<tr><td>Day 1 (24 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 2 (48 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 3 (72 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 4 (96 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 5 (120 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 6 (144 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 7 (168 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 8 (192 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 9 (216 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr><tr><td>Day 10 (240 h)</td><td>Pending HRES forecast data</td><td>Pending</td><td>Pending</td></tr>
+</tbody></table></div>
+<p class="data-note">Lead times: Day 1 = 24 h. Values are computed on the held-out test period from a persistence baseline of regional mean temperature, not from NWP. Bust threshold and splits are on the Analysis page.</p>
+</section>
+<section class="page-width section section-tight"><div class="section-heading"><div><p class="eyebrow">DATA SOURCES</p><h2>Forecast and reanalysis sources</h2></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Use in PS 79</th><th>Status</th></tr></thead><tbody>
+<tr><td><a href="https://nwp.ncmrwf.gov.in/" target="_blank" rel="noopener">NCMRWF NWP portal</a></td><td>Forecast products</td><td>Manual download</td></tr>
+<tr><td><a href="https://nwp.ncmrwf.gov.in/HomePage/index.php" target="_blank" rel="noopener">NCMRWF forecast home page</a></td><td>Forecast products</td><td>Manual download</td></tr>
+<tr><td><a href="https://nwp.ncmrwf.gov.in/HomePage/NEPS-prod-prob.php" target="_blank" rel="noopener">NEPS probability products</a></td><td>Ensemble spread and probabilities</td><td>Manual download</td></tr>
+<tr><td><a href="https://rds.ncmrwf.gov.in/" target="_blank" rel="noopener">NCMRWF data service (RDS)</a></td><td>Historical forecast data</td><td>Manual download</td></tr>
+<tr><td><a href="https://nwp.ncmrwf.gov.in/reanalysis" target="_blank" rel="noopener">NCMRWF reanalysis</a></td><td>Verification and context</td><td>Manual download</td></tr>
+<tr><td><a href="https://ecds.ecmwf.int/datasets/tigge-forecasts?tab=download" target="_blank" rel="noopener">ECMWF TIGGE forecasts</a></td><td>Historical ensemble forecasts</td><td>Manual download</td></tr>
+</tbody></table></div><p class="data-note">These are download portals, not live feeds a browser can read. Once HRES, NCMRWF or TIGGE files are downloaded and paired with verification data, they replace the persistence baseline and the pipeline stays the same.</p></section>
+</main>
+<footer class="site-footer"><div><strong>PS 79 Forecast Intelligence</strong><span>Build v4 · 118,298 readings, 214 days, 558 locations</span></div><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav></footer>
+<script src="data/index.js?v=4"></script><script src="data/bust.js?v=4"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="bust.js?v=4"></script><script src="app.js?v=4"></script>
+</body></html>

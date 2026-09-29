@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology | PS 79</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">PS 79<span>Forecast Intelligence</span></a><button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav id="site-nav" class="site-nav"><a href="index.html">Overview</a><a href="forecast.html">Forecast</a><a href="analysis.html">Analysis</a><a class="active" aria-current="page" href="methodology.html">Methodology</a><a href="about.html">About</a></nav></header>
+<main id="main">
+<section class="page-hero page-width"><p class="eyebrow">METHODOLOGY</p><h1>A transparent path from forecast error to confidence.</h1><p>The prototype separates source data, historical error behaviour, machine-learning inference, and user-facing explanation.</p></section>
+<section class="section page-width"><div class="pipeline large"><div><span>01</span><h3>Forecast</h3><p>Numerical weather prediction fields for the selected lead time.</p></div><div><span>02</span><h3>Reference</h3><p>Reference observations or reanalysis used to establish forecast error.</p></div><div><span>03</span><h3>Error history</h3><p>Historical forecast-error behaviour associated with comparable conditions.</p></div><div><span>04</span><h3>ML inference</h3><p>Estimate where forecast behaviour is likely to be less reliable.</p></div><div><span>05</span><h3>Confidence</h3><p>Convert model output into a spatial and lead-time confidence view.</p></div></div></section>
+<section class="section section-dark"><div class="page-width"><p class="eyebrow">DATA SPECIFICATION</p><h2>Prototype data specification.</h2><div class="text-grid"><p><strong>Domain</strong><br>5–40°N, 65–100°E analysis window; India land area aggregated for display.</p><p><strong>Horizon</strong><br>Day 1–10 = 24–240 h lead time (0 h excluded).</p><p><strong>Forecast source</strong><br>ECMWF IFS HRES via WeatherBench 2, 1.5° grid, 00/12 UTC runs, 2016–2022.</p><p><strong>Reference source</strong><br>ERA5 via WeatherBench 2, 6-hourly. Labels are forecast-vs-reanalysis error, not station observations.</p><p><strong>Evaluation</strong><br>Chronological split: train 2016–2020, validate 2021, test 2022. Bust thresholds come from the historical error distribution and are frozen before final testing.</p></div></div></section>
+<section class="section page-width"><div class="note"><strong>Implementation note</strong><p>This specification is pending data-access validation. Dataset names, versions, temporal splits, and preprocessing parameters must be locked to the verified project data pipeline before presenting them as final system specifications.</p></div></section>
+<section class="page-width section section-tight"><div class="note"><p class="eyebrow">UPLOADED DATA</p><p>The Indian Weather Repository CSV (118,298 readings, 29 Aug 2023 to 4 Apr 2024) is converted into a data file in <code>data/</code> (built by <code>tools/build_data.py</code>) and is a development sample for the map viewer. It is not the verification source (ERA5) and is not substituted for HRES forecast fields.</p></div></section>
+</main>
+<footer class="site-footer"><div><strong>PS 79 Forecast Intelligence</strong><span>Prototype interface</span></div><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav></footer>
+<script src="app.js?v=4"></script>
+</body></html>

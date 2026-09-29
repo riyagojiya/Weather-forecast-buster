@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis | PS 79</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">PS 79<span>Forecast Intelligence</span></a><button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav id="site-nav" class="site-nav"><a href="index.html">Overview</a><a href="forecast.html">Forecast</a><a class="active" aria-current="page" href="analysis.html">Analysis</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav></header>
+<main id="main">
+<section class="page-width section section-tight"><div class="metadata-grid"><div><span>Dev-sample records</span><strong>118,298</strong></div><div><span>Locations</span><strong>558</strong></div><div><span>Regions</span><strong>33</strong></div><div><span>Coverage</span><strong>Aug 2023 - Apr 2024</strong></div></div><p class="data-note">This counts the development sample used by the map viewer. It is not the verification source. Forecast error and bust probability are trained only after ECMWF HRES forecasts are paired with ERA5.</p></section>
+<section class="page-hero page-width"><p class="eyebrow">ANALYSIS</p><h1>Understand forecast failure patterns.</h1><p>The analysis layer is designed to turn model output into information that can be inspected rather than a single opaque score.</p></section>
+<section class="section page-width feature-grid">
+<article class="feature"><span>01</span><h3>Error behaviour</h3><p>Compare forecast behaviour against reference observations or reanalysis to derive forecast error patterns.</p></article>
+<article class="feature"><span>02</span><h3>Bust severity</h3><p>Represent the magnitude or probability of a forecast bust for each region and lead time.</p></article>
+<article class="feature"><span>03</span><h3>Multi-variable analysis</h3><p>Support multiple meteorological variables rather than relying on a single forecast field.</p></article>
+<article class="feature"><span>04</span><h3>Explainability</h3><p>Expose model factors so a user can understand why confidence changed.</p></article>
+</section>
+<section class="section section-dark"><div class="page-width"><p class="eyebrow">PIPELINE</p><h2>From forecast data to a confidence signal.</h2><div class="pipeline"><div>01<br><strong>NWP forecast</strong></div><div>02<br><strong>Reference</strong></div><div>03<br><strong>Forecast error</strong></div><div>04<br><strong>Historical behaviour</strong></div><div>05<br><strong>ML inference</strong></div><div>06<br><strong>Confidence</strong></div></div></div></section>
+<section class="section page-width" id="bustApp"><p class="eyebrow">HISTORICAL REPLAY · DEVELOPMENT BASELINE</p><h2>Where would this forecast have busted?</h2><div class="note"><strong>Stand-in forecast.</strong> No NWP fields are loaded yet, so the forecast here is persistence (the issue-day regional mean temperature carried forward) built from the real observations. Everything else, the error, bust label, probability and verification, is computed from real data and only issue-time information.</div><div class="forecast-toolbar" style="grid-template-columns:2fr 1fr;margin-top:24px;align-items:end"><div class="control-group"><label for="bustDate">Issue date (held-out test period)</label><select id="bustDate"></select></div><button class="button button-primary" id="bustReveal" type="button">Reveal verification</button></div><div class="table-wrap"><table id="bustGrid"></table></div><p class="data-note" id="bustSummary"></p></section>
+<section class="section page-width section-tight" id="bustMetrics"></section>
+</main>
+<footer class="site-footer"><div><strong>PS 79 Forecast Intelligence</strong><span>Prototype interface</span></div><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav></footer>
+<script src="data/bust.js?v=4"></script><script src="bust.js?v=4"></script><script src="app.js?v=4"></script>
+</body></html>
