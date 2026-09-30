@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function render() {
     const mode = modeSel.value, field = varSel.value, f = FIELDS[field], day = dateSel.value, status = $("dataStatus");
     if (mode !== "reference") {
-      if (window.PS79_bust && window.PS79_bust(mode, day, +leadSel.value, pts, map)) { if (mode !== modeSel.value) return; return; }
+      if (window.AERIS_bust && window.AERIS_bust(mode, day, +leadSel.value, pts, map)) { if (mode !== modeSel.value) return; return; }
       pts.clearLayers(); $("mapTitle").textContent = mode === "confidence" ? "Forecast confidence" : "Forecast bust probability";
       status.textContent = "Inference pending"; $("fieldValue").textContent = "No forecast fields connected";
       $("fieldDescription").textContent = "This layer stays empty until forecast fields and matched verification data are available. No values are estimated or filled in.";

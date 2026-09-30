@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Forecast Workspace | PS 79</title>
+<title>Forecast Workspace | AERIS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=4">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
 <body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="index.html">PS 79<span>Forecast Intelligence</span></a><button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="index.html">Overview</a><a class="active" aria-current="page" href="forecast.html">Forecast</a><a href="analysis.html">Analysis</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav></header>
+<header class="site-header"><a class="brand" href="index.html">AERIS<span>Forecast Intelligence</span></a><button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="index.html">Overview</a><a class="active" aria-current="page" href="forecast.html">Forecast</a><a href="analysis.html">Analysis</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav></header>
 <main id="main">
 <section class="page-hero page-width"><p class="eyebrow">FORECAST WORKSPACE</p><h1>Regional forecast reliability viewer.</h1><p>Explore the development sample below. Switch the layer to see held-out forecast confidence and bust probability from the development baseline (persistence forecast of temperature). It is not NWP output.</p></section>
 
@@ -30,7 +30,7 @@
   <div class="stack">
     <article class="data-card"><p class="eyebrow">SELECTED FIELD</p><h2 id="fieldValue">Loading...</h2><p id="fieldDescription">Reading the development sample (build v3)…</p></article>
     <article class="data-card"><p class="eyebrow">DEVELOPMENT SAMPLE</p><div class="metric-list"><div><span>Records</span><strong>118,298</strong></div><div><span>Locations</span><strong>558</strong></div><div><span>Regions</span><strong>33</strong></div><div><span>Coverage</span><strong>Aug 2023 - Apr 2024</strong></div></div></article>
-    <article class="data-card"><p class="eyebrow">PS 79 STATUS</p><div class="empty-state"><strong id="modelStatus">Development baseline model</strong><span id="modelDescription">Forecasts here are a persistence baseline built from the observations, so the full pipeline (forecast, error, bust label, probability, verification) runs on real data. HRES or NCMRWF forecasts replace the baseline when paired.</span></div></article>
+    <article class="data-card"><p class="eyebrow">AERIS STATUS</p><div class="empty-state"><strong id="modelStatus">Development baseline model</strong><span id="modelDescription">Forecasts here are a persistence baseline built from the observations, so the full pipeline (forecast, error, bust label, probability, verification) runs on real data. HRES or NCMRWF forecasts replace the baseline when paired.</span></div></article>
   </div>
 </div>
 </section>
@@ -44,7 +44,7 @@
 </tbody></table></div>
 <p class="data-note">Lead times: Day 1 = 24 h. Values are computed on the held-out test period from a persistence baseline of regional mean temperature, not from NWP. Bust threshold and splits are on the Analysis page.</p>
 </section>
-<section class="page-width section section-tight"><div class="section-heading"><div><p class="eyebrow">DATA SOURCES</p><h2>Forecast and reanalysis sources</h2></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Use in PS 79</th><th>Status</th></tr></thead><tbody>
+<section class="page-width section section-tight"><div class="section-heading"><div><p class="eyebrow">DATA SOURCES</p><h2>Forecast and reanalysis sources</h2></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Use in AERIS</th><th>Status</th></tr></thead><tbody>
 <tr><td><a href="https://nwp.ncmrwf.gov.in/" target="_blank" rel="noopener">NCMRWF NWP portal</a></td><td>Forecast products</td><td>Manual download</td></tr>
 <tr><td><a href="https://nwp.ncmrwf.gov.in/HomePage/index.php" target="_blank" rel="noopener">NCMRWF forecast home page</a></td><td>Forecast products</td><td>Manual download</td></tr>
 <tr><td><a href="https://nwp.ncmrwf.gov.in/HomePage/NEPS-prod-prob.php" target="_blank" rel="noopener">NEPS probability products</a></td><td>Ensemble spread and probabilities</td><td>Manual download</td></tr>
@@ -53,7 +53,7 @@
 <tr><td><a href="https://ecds.ecmwf.int/datasets/tigge-forecasts?tab=download" target="_blank" rel="noopener">ECMWF TIGGE forecasts</a></td><td>Historical ensemble forecasts</td><td>Manual download</td></tr>
 </tbody></table></div><p class="data-note">These are download portals, not live feeds a browser can read. Once HRES, NCMRWF or TIGGE files are downloaded and paired with verification data, they replace the persistence baseline and the pipeline stays the same.</p></section>
 </main>
-<footer class="site-footer"><div><strong>PS 79 Forecast Intelligence</strong><span>Build v4 · 118,298 readings, 214 days, 558 locations</span></div><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav></footer>
+<footer class="site-footer"><div><strong>AERIS Forecast Intelligence</strong><span>Build v4 · 118,298 readings, 214 days, 558 locations</span></div><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav></footer>
 <script src="data/index.js?v=4"></script><script src="data/bust.js?v=4"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="bust.js?v=4"></script><script src="app.js?v=4"></script>

@@ -5,7 +5,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"
 const col=p=>{const t=Math.min(1,p/.6);return `rgb(${Math.round(242-120*t)},${Math.round(238-160*t)},${Math.round(233-142*t)})`};
 const fg=p=>Math.min(1,p/.6)>.55?"#fff":"#2b2523",pc=p=>Math.round(p*100)+"%",f=(v,n)=>v==null?"n/a":v.toFixed(n);
 if(!B)return;const M=B.meta;
-window.PS79_bust=function(mode,day,lead,pts,map){
+window.AERIS_bust=function(mode,day,lead,pts,map){
   const set=(a,b,c,d)=>{$("dataStatus").textContent=a;$("fieldValue").textContent=b;$("fieldDescription").textContent=c;$("pointCount").textContent=d};
   $("mapTitle").textContent=(mode==="confidence"?"Forecast confidence":"Bust probability")+` · Day ${lead} · issued ${fmt(day)}`;
   if(!B.pred[day]){set("Outside test period","No held-out prediction",`Baseline predictions exist only for held-out test issue dates (${fmt(B.dates[0])} to ${fmt(B.dates[B.dates.length-1])}). Pick a date in that range.`,"0 regions");$("mapLegend").innerHTML='<span class="source-chip">Held-out dates only</span>';return true}
